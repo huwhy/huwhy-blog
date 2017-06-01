@@ -1,0 +1,40 @@
+
+
+<div class="container-center">
+    <div class="container-left">
+        <div class="shadow-box article-wrap">
+            <div class="clearfix navigation-item">
+                <div class="pull-left share-wrap fvr-list">
+                    {{range .links}}
+                    <span class="pull-left share-fvr-wrap js-fvr-btn " >
+                        <a href="{{.Url}}" target="_blank">
+                            <span class="bdr-box tool-tip share-fvr" title="{{.Name}}">
+                                <i class="i-icon2 icon-fvr0" style="background-image:url('')">
+                                    <img src="{{.Url | ico}}/favicon.ico" width="20px" height="18px">
+                                </i>
+                                {{.Name}}
+                            </span>
+                        </a>
+                    </span>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+        <div class="clearfix shadow-box mod-info-flow">
+            <div class="clearfix mod-b mod-jinju">
+            </div>
+        </div>
+    </div>
+    {{template "common/right.html" .}}
+</div>
+
+<script>
+    $(function () {
+        $("ul.pic_box li").hover(function () {
+            $(this).children("a.bar").toggle(500);
+        }, function () {
+            $(this).children("a.bar").toggle(500);
+        });
+        LinkSel.init();
+    });
+</script>

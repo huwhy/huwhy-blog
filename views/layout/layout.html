@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <title>{{.seo.Title}}</title>
+    <meta name="description" content="{{.seo.Description}}">
+    <meta name="keywords" content="{{.seo.Keywords}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/blog/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/static/blog/css/common.css">
+    <link rel="stylesheet" type="text/css" href="https://g.alicdn.com/sj/dpl/1.4.3/css/sui-themes-dark-green.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://g.alicdn.com/sj/dpl/1.4.3/css/sui-append.min.css" />
+    <script src="https://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://g.alicdn.com/sj/dpl/1.4.3/js/sui.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/blog/css/msg.css">
+    <script src="/static/blog/js/common.js"></script>
+    <script src="/static/blog/js/msg.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".dropdown>.dropdown-toggle").hover(function(){
+                $(this).siblings(".dropdown-menu").show();
+            },function(){
+                $(this).siblings(".dropdown-menu").hide();
+            });
+            $(".dropdown>.dropdown-toggle").siblings(".dropdown-menu").hover(function(){
+                $(this).show();
+            },function(){
+                $(this).hide();
+            });
+            $(".dropdown .dropdown").hover(function(){
+                $(this).children(".dropdown-menu").show();
+            }, function(){
+                $(this).children(".dropdown-menu").hide();
+            });
+            $("ul.pic_box li").hover(function () {
+                $(this).children("a.bar").toggle(500);
+            }, function () {
+                $(this).children("a.bar").toggle(500);
+            });
+        });
+    </script>
+</head>
+<body class="blog">
+{{template "../common/top.html" .}}
+<div class="crumb">
+    <ul class="sui-breadcrumb">
+        {{range .crumbs}}
+            <li><a href="{{.url}}">{{.name}}</a></li>
+        {{end}}
+    </ul>
+</div>
+<div class="container">
+    {{.LayoutContent}}
+</div>
+{{template "../common/footer.html" .}}
+</body>
+</html>

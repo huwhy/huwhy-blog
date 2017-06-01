@@ -1,0 +1,27 @@
+<div class="container-center">
+    <div class="container-left">
+        <div class="clearfix shadow-box mod-info-flow">
+            {{range .articles}}
+            <!--jin句展示-->
+            <div class="clearfix mod-b mod-jinju">
+                <p class="mod-p">
+                    <a class="zz-title title" href="/article/{{.Id}}.html" target="_blank"><span
+                            class="atc-smr">[{{.Author}}]: {{.Title}}</span></a>
+                </p>
+                <span class="mod-summary">{{.Summary}}</span>
+                <span class="right action-box">
+                                <span class="share-box js-list-share-btn" aid="111250" style="display: none" href="#"
+                                      title="分享">
+                                    <i class="i-icon2 icon-share-box"></i>(<em>1</em>)
+                                    <div class="hide"></div>
+                                </span>
+                                    <a class="cmt" href="/article/comment/25.html" title="评论数"
+                                       target="_blank">评论(<em>{{.Comments}}</em>)</a>
+                                    <a class="cmt" href="/article/comment/25.html" title="浏览数"
+                                       target="_blank">浏览(<em>{{.Views}}</em>)</a>
+                            </span>
+            </div>
+            {{end}}
+        </div>
+    </div>
+</div>
